@@ -29,6 +29,7 @@ https://github.com/oneblack74/UnityToolbox.git?path=Packages/com.oneblack74.unit
 | [**ServiceLocator**](#servicelocator) | Simple dependency injection container |
 | [**EventBus**](#eventbus) | Static global event system for decoupled communication |
 | [**SceneLoader**](#sceneloader) | Async scene loading with events |
+| [**Singleton\<T\>**](#singletont) | Generic MonoBehaviour singleton base class |
 
 ---
 
@@ -133,12 +134,50 @@ public struct SceneLoadCompletedEvent
 
 ---
 
+## Singleton\<T\>
+
+### Overview
+
+Generic MonoBehaviour singleton base class. Ensures a single instance exists across the application, with optional persistence between scenes.
+
+### Usage
+
+```csharp
+// Define a singleton
+public class AudioManager : Singleton<AudioManager>
+{
+    public void PlaySFX(AudioClip clip) { ... }
+}
+
+// Scene-scoped singleton (disable persist in Inspector)
+public class UIManager : Singleton<UIManager>
+{
+    public void ShowPanel(string panelName) { ... }
+}
+
+// Access anywhere
+AudioManager.Instance.PlaySFX(clip);
+```
+
+**Options:**
+
+| Field | Default | Description |
+|-------|---------|-------------|
+| `_persistAcrossScenes` | `false` | Calls `DontDestroyOnLoad` on the instance |
+
+**Behaviour:**
+- If no instance exists in the scene, one is created automatically
+- Duplicate instances are destroyed immediately
+- Returns `null` safely after application quit
+
+---
+
 ## 🗺️ Roadmap
 
 - [x] ServiceLocator
 - [x] EventBus
 - [x] SceneLoader
-- [ ] Singleton<T>
+- [x] Singleton<T>
 - [ ] TaskHelper
 - [ ] TweenHelper
 - [ ] Extensions
