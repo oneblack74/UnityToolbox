@@ -1,6 +1,6 @@
 {
   "name": "com.oneblack74.unitytoolbox.core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "oneblack74 UnityToolbox - Core",
   "description": "Core utilities for UnityToolbox",
   "unity": "6000.0",
