@@ -1,3 +1,7 @@
 {
-	"name": "oneblack74.UnityToolbo.Core.Runtime"
+    "name": "oneblack74.UnityToolbox.Core.Runtime",
+    "references": [
+        "UniTask"
+    ],
+    "autoReferenced": true
 }
