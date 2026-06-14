@@ -30,6 +30,8 @@ https://github.com/oneblack74/UnityToolbox.git?path=Packages/com.oneblack74.unit
 | [**EventBus**](#eventbus) | Static global event system for decoupled communication |
 | [**SceneLoader**](#sceneloader) | Async scene loading with events |
 | [**Singleton\<T\>**](#singletont) | Generic MonoBehaviour singleton base class |
+| [**TaskHelper**](#taskhelper) | Utility helpers for async task operations |
+| [**Extensions**](#extensions) | Useful extensions for Unity types |
 
 ---
 
@@ -213,6 +215,92 @@ TaskHelper.SafeFireAndForget(PlayAnimationAsync(), ex =>
 
 ---
 
+## 🔧 Extensions
+
+Small but essential helpers you'd otherwise rewrite every project.
+
+---
+
+### TransformExtensions
+
+| Method | Description |
+|--------|-------------|
+| `ResetLocal()` | Resets local position, rotation and scale |
+| `SetPositionX(x)` | Sets only the X axis of world position |
+| `SetPositionY(y)` | Sets only the Y axis of world position |
+| `SetPositionZ(z)` | Sets only the Z axis of world position |
+
+```csharp
+transform.ResetLocal();
+transform.SetPositionX(5f);
+```
+
+---
+
+### VectorExtensions
+
+| Method | Description |
+|--------|-------------|
+| `WithX/Y/Z(value)` | Returns a new vector with one axis changed |
+| `ToVector2()` | Converts Vector3 to Vector2 (drops Z) |
+| `ToVector3(z)` | Converts Vector2 to Vector3 (default z = 0) |
+
+```csharp
+Vector3 moved = transform.position.WithX(3f);
+Vector2 flat = someVector3.ToVector2();
+```
+
+---
+
+### ColorExtensions
+
+| Method | Description |
+|--------|-------------|
+| `WithAlpha(alpha)` | Returns the color with a new alpha value |
+
+```csharp
+image.color = image.color.WithAlpha(0.5f);
+```
+
+---
+
+### ListExtensions
+
+| Method | Description |
+|--------|-------------|
+| `IsNullOrEmpty()` | Returns true if the list is null or has no elements |
+| `Shuffle()` | Shuffles the list in place |
+| `GetRandom()` | Returns a random element from the list |
+
+```csharp
+if (enemies.IsNullOrEmpty()) return;
+
+spawnPoints.Shuffle();
+Transform point = spawnPoints.GetRandom();
+```
+
+---
+
+### StringExtensions
+
+| Method | Description |
+|--------|-------------|
+| `IsNullOrEmpty()` | Shorthand for `string.IsNullOrEmpty()` |
+| `IsNullOrWhiteSpace()` | Shorthand for `string.IsNullOrWhiteSpace()` |
+| `ToColor()` | Parses a hex string to a `Color` (#RGB, #RRGGBB, #RRGGBBAA) |
+
+```csharp
+if (playerName.IsNullOrEmpty()) return;
+
+Color c = "#FF5733".ToColor();
+Color transparent = "#FF573380".ToColor();
+```
+
+> ⚠️ `ToColor()` falls back to `Color.white` and logs a warning if the hex string is invalid.
+```
+
+---
+
 ## 🗺️ Roadmap
 
 - [x] ServiceLocator
@@ -220,13 +308,13 @@ TaskHelper.SafeFireAndForget(PlayAnimationAsync(), ex =>
 - [x] SceneLoader
 - [x] Singleton<T>
 - [x] TaskHelper
+- [x] Extensions
+  - [x] TransformExtensions
+  - [x] VectorExtensions
+  - [x] ColorExtensions
+  - [x] ListExtensions
+  - [x] StringExtensions
 - [ ] TweenHelper
-- [ ] Extensions
-  - [ ] TransformExtensions
-  - [ ] VectorExtensions
-  - [ ] ColorExtensions
-  - [ ] ListExtensions
-  - [ ] StringExtensions
 
 ---
 

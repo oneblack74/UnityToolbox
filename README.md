@@ -41,13 +41,13 @@ Modular **Unity 6** toolbox — each module is an independent UPM package instal
 - [x] SceneLoader
 - [x] Singleton<T>
 - [x] TaskHelper
+- [x] Extensions
+  - [x] TransformExtensions
+  - [x] VectorExtensions
+  - [x] ColorExtensions
+  - [x] ListExtensions
+  - [x] StringExtensions
 - [ ] TweenHelper
-- [ ] Extensions
-  - [ ] TransformExtensions
-  - [ ] VectorExtensions
-  - [ ] ColorExtensions
-  - [ ] ListExtensions
-  - [ ] StringExtensions
 
 
 ### Audio `com.oneblack74.unitytoolbox.audio`
