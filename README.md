@@ -40,7 +40,7 @@ Modular **Unity 6** toolbox — each module is an independent UPM package instal
 - [x] EventBus
 - [x] SceneLoader
 - [x] Singleton<T>
-- [ ] TaskHelper
+- [x] TaskHelper
 - [ ] TweenHelper
 - [ ] Extensions
   - [ ] TransformExtensions

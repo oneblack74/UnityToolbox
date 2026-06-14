@@ -172,13 +172,54 @@ AudioManager.Instance.PlaySFX(clip);
 
 ---
 
+## 🛠️ TaskHelper
+
+Utility helpers for async task operations built on top of UniTask.
+
+### Methods
+
+| Method | Description |
+|--------|-------------|
+| `WaitUntil(condition)` | Waits until the condition returns `true` |
+| `WaitWhile(condition)` | Waits while the condition returns `true` |
+| `RunWithTimeout(task, seconds)` | Cancels the task if it exceeds the timeout (default: 10s) |
+| `Retry(task, maxAttempts, delay)` | Retries the task on failure (default: 3 attempts) |
+| `SafeFireAndForget(task, onError)` | Runs a task without await with error handling |
+
+### Usage
+
+```csharp
+// Wait for a condition
+await TaskHelper.WaitUntil(() => _isReady);
+await TaskHelper.WaitWhile(() => _isLoading);
+
+// Timeout
+await TaskHelper.RunWithTimeout(() => LoadDataAsync(), seconds: 5f);
+
+// Retry with delay between attempts
+await TaskHelper.Retry(() => FetchFromAPIAsync(), maxAttempts: 3, delayBetweenAttempts: 1f);
+
+// Fire and forget with error logging
+TaskHelper.SafeFireAndForget(PlayAnimationAsync());
+
+// Fire and forget with custom error handler
+TaskHelper.SafeFireAndForget(PlayAnimationAsync(), ex => 
+    Debug.LogError($"Anim failed: {ex.Message}"));
+    
+```
+- `WaitUntil` and `WaitWhile` are thin wrappers around UniTask for a unified API.
+- `RunWithTimeout` throws a `TimeoutException` if the task exceeds the limit.
+- `Retry` rethrows the last exception after all attempts are exhausted.
+
+---
+
 ## 🗺️ Roadmap
 
 - [x] ServiceLocator
 - [x] EventBus
 - [x] SceneLoader
 - [x] Singleton<T>
-- [ ] TaskHelper
+- [x] TaskHelper
 - [ ] TweenHelper
 - [ ] Extensions
   - [ ] TransformExtensions
