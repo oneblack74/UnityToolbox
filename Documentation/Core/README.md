@@ -257,6 +257,9 @@ Vector2 flat = someVector3.ToVector2();
 | Method | Description |
 |--------|-------------|
 | `WithAlpha(alpha)` | Returns the color with a new alpha value |
+| `WithRed(red)` | Returns the color with a new red value |
+| `WithGreen(green)` | Returns the color with a new green value |
+| `WithBlue(blue)` | Returns the color with a new blue value |
 
 ```csharp
 image.color = image.color.WithAlpha(0.5f);

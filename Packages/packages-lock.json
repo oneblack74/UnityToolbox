@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.oneblack74.unitytoolbox.audio": {
+      "version": "file:com.oneblack74.unitytoolbox.audio",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.oneblack74.unitytoolbox.core": "1.0.3"
+      }
+    },
     "com.oneblack74.unitytoolbox.core": {
       "version": "file:com.oneblack74.unitytoolbox.core",
       "depth": 0,

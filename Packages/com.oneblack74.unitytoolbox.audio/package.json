@@ -1,0 +1,14 @@
+{
+  "name": "com.oneblack74.unitytoolbox.audio",
+  "version": "1.0.0",
+  "displayName": "oneblack74 UnityToolbox - Audio",
+  "description": "Audio manager with pool, SFX and Music support.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Axel Brissy",
+    "url": "https://axel-brissy.fr"
+  },
+  "dependencies": {
+    "com.oneblack74.unitytoolbox.core": "1.0.3"
+  }
+}

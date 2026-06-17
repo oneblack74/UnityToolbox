@@ -51,7 +51,12 @@ Modular **Unity 6** toolbox — each module is an independent UPM package instal
 
 
 ### Audio `com.oneblack74.unitytoolbox.audio`
-- [ ] Coming soon
+- [x] AudioManager
+- [x] MusicTrack
+- [x] SoundEffect
+- [x] Audio pooling
+- [ ] AudioMixer integration
+- [ ] Random pitch variation on SoundEffect
 
 ### UI `com.oneblack74.unitytoolbox.ui`
 - [ ] Coming soon

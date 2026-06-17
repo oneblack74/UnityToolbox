@@ -1,0 +1,17 @@
+{
+    "name": "com.oneblack74.UnityToobox.Audio.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "UniTask",
+        "com.oneblack74.unitytoolbox.core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
