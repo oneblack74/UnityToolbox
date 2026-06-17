@@ -12,7 +12,8 @@ Modular **Unity 6** toolbox — each module is an independent UPM package instal
 
 | Package | Version | Git URL | Doc |
 |---------|---------|---------|-----|
-| **Core** | `1.0.0` | [📋 Copy](https://github.com/oneblack74/UnityToolbox.git?path=Packages/com.oneblack74.unitytoolbox.core) | [README](Documentation/Core/README.md) |
+| **Core** | `1.0.3` | [📋 Copy](https://github.com/oneblack74/UnityToolbox.git?path=Packages/com.oneblack74.unitytoolbox.core) | [README](Documentation/Core/README.md) |
+| **Audio** | `1.0.0` | [📋 Copy](https://github.com/oneblack74/UnityToolbox.git?path=Packages/com.oneblack74.unitytoolbox.audio) | [README](Documentation/Audio/README.md) |
 
 > More packages coming soon — see [Roadmap](#roadmap)
 
